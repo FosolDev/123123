@@ -122,11 +122,9 @@
 			
 			$('#btn-preview').on('click', function(){
 				var type = $('#in-type').val()
-				  , code = $('#in-code').val() 
-				  , code2 = $('#in-server').val()
+				  , code = $('#in-code').val() + $('#in-server').val()
 			  ;
-				alert(code+online+code2);
-				VK.callMethod("showAppWidgetPreviewBox", type, code+code2);
+				VK.callMethod("showAppWidgetPreviewBox", type, code);
 			});
 
 		}
@@ -166,3 +164,4 @@
 
 </body>
 </html>
+
