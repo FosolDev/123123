@@ -38,14 +38,50 @@
 		
 		<div class="form-group">
 			<label for="in-code">Код виджета:</label>
-			<textarea rows="7" class="form-control" id="in-code">return {
-"title": "Цитата",
-"text": "Текст цитаты"
-};</textarea>
+			<textarea rows="7" class="form-control" id="in-code">return { 
+    "title": "О сервере", 
+    "title_url": "https://vk.com/soapmcpe", 
+    "title_counter": 2, 
+    "more": "Написать вопрос администрации", 
+    "more_url": "https://vk.me/soapmcpe", 
+    "head": [{ 
+        "text": "Сервера",
+        "align": "center" 
+    }, { 
+        "text": "Версия", 
+        "align": "center" 
+    }, {
+        "text": "Адрес",
+        "align": "center"
+    }], 
+    "body": [ 
+        [{ 
+            "text": "SuperLand #1",
+            "icon_id": "168050240_316747"
+        }, 
+        { 
+            "text": "1.1.0 - 1.1.7" 
+        },
+        {
+            "text": </textarea>
 		</div>
 			<div class="form-group">
 			<label for="in-code">2:</label>
-			<textarea rows="7" class="server" id="in-server"> ххх </textarea>
+			<textarea rows="7" class="server" id="in-server">" 
+        }], 
+        [{ 
+            "text": "SuperLand #2",
+            "icon_id": "168050240_316749"
+        }, 
+        { 
+            "text": "В разработке.."
+        },
+        {
+            "text": "yourdomain.ru 19133" 
+        }
+        ] 
+    ]
+};</textarea>
 		</div>
 		<button id="btn-preview" class="btn btn-primary" type="button">Предпросмотр виджета</button>
 				
@@ -87,11 +123,10 @@
 			$('#btn-preview').on('click', function(){
 				var type = $('#in-type').val()
 				  , code = $('#in-code').val() 
-				  , code2 = $('#server').val()
-				  , online = $.get('http://minecraft-api.com/api/query/playeronline.php?ip=simplexland.ru:19132')
+				  , code2 = $('#in-server').val()
 			  ;
-				
-				VK.callMethod("showAppWidgetPreviewBox", type, code+online+code2);
+				alert(code+online+code2);
+				VK.callMethod("showAppWidgetPreviewBox", type, code+code2);
 			});
 
 		}
