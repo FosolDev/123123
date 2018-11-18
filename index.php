@@ -1,0 +1,36 @@
+<?php
+if (!isset($_REQUEST)) {
+	return;
+}
+$confirmationToken = 'd13badf8';
+$token = 'e75305eff760b57f21df9ca86dbc0950c5327c880c0649c3c8d0a8272a8d2ad68c3b3f2746300415120f7';
+$secretKey = 'keytigey';
+$data = json_decode(file_get_contents('php://input'));
+if (strcmp($data->secret, $secretKey) !== 0 && strcmp($data->type, 'confirmation') !== 0) {
+	return;
+}
+switch ($data->type) {
+case 'confirmation':
+	echo $confirmationToken;
+	break;
+
+case 'message_new':
+	$userId = $data->object->user_id;
+	$userInfo = json_decode(file_get_contents("https://api.vk.com/method/users.get?user_ids={$userId
+}
+&v=5.0"));
+$user_name = $userInfo->response[0]->first_name;
+$request_params = array(
+	'message' => "{$user_name
+}
+, Ваше сообщение получено!
+В ближайшее время админ группы на него ответит.",
+'user_id' => $userId,
+'access_token' => $token,
+'v' => '5.5'
+);
+$get_params = http_build_query($request_params);
+file_get_contents('https://api.vk.com/method/messages.send?' . $get_params);
+echo ('ok');
+break;
+}
