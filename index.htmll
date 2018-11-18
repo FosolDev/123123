@@ -46,7 +46,7 @@
     "more": "Написать вопрос администрации", 
     "more_url": "https://vk.me/soapmcpe", 
     "head": [{ 
-        "text": "Сервера",<!DOCTYPE html><!DOCTYPE html><!DOCTYPE html>
+        "text": "Сервера",<!DOCTYPE html><!DOCTYPE html><!DOCTYPE html
 
 <html lang="">
 <head>
@@ -424,7 +424,7 @@
 		<div class="form-group">
 			<label for="in-type">Тип виджета:</label>
 			<select class="form-control" id="in-type">
-				<option value="text">text</option>
+				<option value="text">text</option
 				<option value="list">list</option>
 				<option value="table">table</option>
 				<option value="tiles">tiles</option>
@@ -434,7 +434,7 @@
 				<option value="matches">matches</option>
 			</select>
 		</div>
-		
+	
 		<div class="form-group">
 			<label for="in-code">Код виджета:</label>
 			<textarea rows="7" class="form-control" id="in-code">return { 
@@ -443,7 +443,7 @@
     "title_counter": 2, 
     "more": "Написать вопрос администрации", 
     "more_url": "https://vk.me/soapmcpe", 
-    "head": [{ 
+    "head": [{
         "text": "Сервера",
         "align": "center" 
     }, { 
@@ -452,7 +452,7 @@
     }, {
         "text": "Адрес",
         "align": "center"
-    }], 
+    }],
     "body": [ 
         [{ 
             "text": "SuperLand #1",
@@ -555,8 +555,7 @@
 	  }, function() {
 	     // API initialization failed
 	     // Can reload page here
-	     console.error('VK init error', arguments);
-		}, '5.74');
+	     cons
 	</script>
 	<!-- /VK scripts -->
 
